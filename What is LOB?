@@ -1,0 +1,42 @@
+What is LOB?
+    LOB is a company that automate direct mail and address verification 
+    at scale.
+
+LOB API?
+    LOB APIs allow other companies to use their address verification and auto completion. 
+
+What other services/products does LOB offer?
+    On-demand postcards, letters, and checks directly from LOB's CRM or customer data system.
+
+When you login to LOB?
+    TWO options
+        1: Automate Direct mail
+        2: Verify and Enrich Addresses
+
+Difference between the provided version and real one?
+    Name, description, compnay name, phone number, email.
+
+US verification and Int'l verifications are different objects I'm assuming...
+    Verification can happen by ->
+        1) Upload a csv file
+        2) Form provided on the LOB interface
+        3) Via APIs provided that are compatiable with several languages 
+
+
+NODE API address verification:
+// npm install lob 
+
+const Lob = require('lob')('live_555a6d31b28bd4226e5fca4499912ca04bc');
+
+Lob.usVerifications.verify({
+  recipient:    '',
+  primary_line: '',
+  secondary_line: '',
+  city: '',
+  state: '',
+  zip_code: ''
+}, function (err, res) {
+  console.log(err, res);
+});
+
+* 300 verifications free each month
